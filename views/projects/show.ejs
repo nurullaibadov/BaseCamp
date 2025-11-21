@@ -1,0 +1,9 @@
+<h2><%=project.title%></h2>
+<p><%=project.description||'Açıklama yok'%></p>
+<p>Sahip: <%=project.owner.username%></p>
+<% if(isOwner || isAdmin){ %>
+<a href="/projects/<%=project.id%>/edit"><button>Düzenle</button></a>
+<form action="/projects/<%=project.id%>?_method=DELETE" method="POST" style="display:inline">
+<button class="btn-danger">Sil</button></form>
+<% } %>
+<br><a href="/projects">Geri</a>

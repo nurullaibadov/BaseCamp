@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>MyBasecamp</title>
+<style>body{font-family:Arial;margin:40px;background:#f1f1f1}
+header{background:#222;color:white;padding:20px;border-radius:10px}
+nav a{color:#0f0;margin:0 15px;text-decoration:none}
+main{background:white;padding:30px;margin-top:20px;border-radius:10px}
+button{padding:10px 20px;background:#0066ff;color:white;border:none;border-radius:5px;cursor:pointer}
+button:hover{background:#0055cc}
+.btn-danger{background:#d33}
+input,textarea{width:100%;padding:10px;margin:10px 0;border:1px solid #ccc;border-radius:5px}
+</style>
+</head>
+<body>
+<header><h1>MyBasecamp</h1>
+<nav>
+<% if(userId){ %> <%=username%> <%if(isAdmin){%>(ADMIN)<%}%> | 
+<a href="/projects">Projeler</a> <%if(isAdmin){%>| <a href="/auth/users">Kullanıcılar</a><%}%> | <a href="/auth/logout">Çıkış</a>
+<% } else { %>
+<a href="/auth/login">Giriş</a> | <a href="/auth/register">Kayıt</a>
+<% } %>
+</nav></header>
+<main><%- body %></main>
+</body></html>

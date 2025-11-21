@@ -1,0 +1,4 @@
+<h2>Projeler</h2><a href="/projects/new"><button>Yeni Proje</button></a>
+<ul><% projects.forEach(p=>{ %>
+<li><a href="/projects/<%=p.id%>"><%=p.title%></a> - <%=p.owner.username%></li>
+<% }) %></ul>

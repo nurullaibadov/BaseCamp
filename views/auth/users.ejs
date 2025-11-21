@@ -1,0 +1,8 @@
+<h2>Kullanıcılar (ADMIN)</h2>
+<ul><% users.forEach(u=>{ %>
+<li><%=u.username%> <%=u.isAdmin?'(ADMIN)':''%>
+<form action="/auth/users/<%=u.id%>/toggle-admin" method="POST" style="display:inline">
+<button><%=u.isAdmin?'Admin Kaldır':'Admin Yap'%></button></form>
+<form action="/auth/users/<%=u.id%>?_method=DELETE" method="POST" style="display:inline">
+<button class="btn-danger">Sil</button></form>
+</li><% }) %></ul>
