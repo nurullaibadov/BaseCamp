@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>dashboard-MyBasecamp</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Layihələrim 📌</h2>
+
+  <% if (projects.length === 0) { %>
+    <p>No projects yet</p>
+  <% } %>
+
+  <% projects.forEach(p => { %>
+    <div class="project-card">
+      <h3><%= p.title %></h3>
+      <button onclick="location.href='/project/<%= p.id %>'">
+        Open
+      </button>
+    </div>
+  <% }) %>
+
+  <button onclick="location.href='/project/new'">
+    + New Project
+  </button>
+
+  <form action="/sign_out" method="POST">
+    <button style="background:red">Log out</button>
+  </form>
+</div>
+
+</body>
+</html>
